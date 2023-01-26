@@ -1,0 +1,18 @@
+body{
+  background-color: black;
+}
+
+iframe{
+  pointer-events: none;
+  justify-self: end;
+}
+
+.hero{
+  background-size: cover;
+  height: 150px;
+  width: 150px;
+}
+
+#main-container{
+  margin-top: 250px;
+}
