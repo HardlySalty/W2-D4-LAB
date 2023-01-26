@@ -9,9 +9,8 @@ p{
   margin: 0;
 }
 
-iframe{
-  pointer-events: none;
-  justify-self: end;
+main{
+  user-select: none;
 }
 
 .hero{

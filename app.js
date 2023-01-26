@@ -1,5 +1,8 @@
 let heroContainer = document.querySelector("#hero-container")
 let bossContainer = document.querySelector("#boss-container")
+let mainContainer = document.querySelector("main")
+
+mainContainer.addEventListener("click", dealBossDamage)
 
 let heroArr = [
   {name: "Andrew", curHealth: 100, maxHealth: 100, attack: 10, level: 0},
@@ -36,5 +39,24 @@ function drawAvatar(){
   bossContainer.innerHTML = bossTemplate
   heroContainer.innerHTML = heroTemplate
 }
+
+function dealBossDamage(){
+  let curBoss = bossArr[0]
+
+  let damage = 0
+  heroArr.forEach(e => {
+    damage += e.attack
+  })
+
+  curBoss.curHealth -= damage
+  if(curBoss.curHealth <= 0){
+    curBoss.level++
+    curBoss.attack += 5
+    curBoss.maxHealth += 150
+    curBoss.curHealth = curBoss.maxHealth
+  }
+  drawAvatar()
+}
+
 
 drawAvatar()
